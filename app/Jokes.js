@@ -28,6 +28,10 @@ class Jokes extends Component {
   componentDidMount() {
   }
 
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   getChuckJokes() {
     fetch("https://api.chucknorris.io/jokes/random", {
       method: "GET",
@@ -36,7 +40,7 @@ class Jokes extends Component {
     .then((responseData) => {
       console.log(responseData.value)
       this.setState({
-        joke: responseData.value,
+        joke: this.capitalizeFirstLetter(responseData.value),
       })
     })
     .done();
@@ -50,7 +54,7 @@ class Jokes extends Component {
     .then((responseData) => {
       console.log(responseData.joke)
       this.setState({
-        joke: responseData.joke,
+        joke: this.capitalizeFirstLetter(responseData.joke),
       })
     })
     .done();
@@ -67,11 +71,6 @@ class Jokes extends Component {
         justifyContent: 'center', //vertical
         backgroundColor: '#fff',
       },
-      buttonWrapper: {
-        backgroundColor:'orange',
-        margin: 10,
-        width: 200,
-      },
       buttonText: {
         fontSize: 18,
         padding: 8,
@@ -80,11 +79,11 @@ class Jokes extends Component {
         fontWeight: "bold"
       },
       picker: {
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
       },
       JokeContainer: {
         backgroundColor: '#fff',
-        height: '100%',
+        height: '200%',
         width: '100%',
         alignItems: 'center'
       },
@@ -93,17 +92,31 @@ class Jokes extends Component {
         paddingTop: 20,
       },
       buttonWrapperJokeChuck: {
-        backgroundColor:'grey',
-        margin: 10,
-        width: 200,
+        backgroundColor:'#1f3861',
+        padding: 2,
+        marginBottom: 11,
+        width: 160,
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: '#1f3861',
+        opacity: 0.8
       },
       buttonWrapperJokeMama: {
-        backgroundColor:'grey',
-        margin: 10,
-        width: 200,
+        backgroundColor:'#1f3861',
+        padding: 2,
+        marginBottom: 11,
+        width: 160,
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: '#1f3861',
+        opacity: 0.8
       },
       JokeResultText: {
-        textAlign: 'justify'
+        textAlign: 'justify',
+        fontSize: 15,
+        fontWeight: 'bold',
+        // color: '#ad4b40'
+        color: 'grey'
       }
 
     });
