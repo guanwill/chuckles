@@ -101,6 +101,9 @@ class Jokes extends Component {
         backgroundColor:'grey',
         margin: 10,
         width: 200,
+      },
+      JokeResultText: {
+        textAlign: 'justify'
       }
 
     });
@@ -132,7 +135,7 @@ class Jokes extends Component {
             }
 
             <View style={styles.JokeResult}>
-              <Text>{this.state.joke} </Text>
+              <Text style={styles.JokeResultText}>{this.state.joke} </Text>
             </View>
         </View>
 
