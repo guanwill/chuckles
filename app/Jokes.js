@@ -92,7 +92,8 @@ class Jokes extends Component {
         paddingTop: 20,
       },
       buttonWrapperJokeChuck: {
-        backgroundColor:'#1f3861',
+        // backgroundColor:'#1f3861',
+        backgroundColor: 'darkorange',
         padding: 2,
         marginBottom: 11,
         width: 160,
@@ -102,7 +103,8 @@ class Jokes extends Component {
         opacity: 0.8
       },
       buttonWrapperJokeMama: {
-        backgroundColor:'#1f3861',
+        // backgroundColor:'#1f3861',
+        backgroundColor: 'darkorange',
         padding: 2,
         marginBottom: 11,
         width: 160,

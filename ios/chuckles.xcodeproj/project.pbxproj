@@ -606,7 +606,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 5456EZJU8Z;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1063,7 +1063,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Will Guan (J96DDH3XK9)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 5456EZJU8Z;
@@ -1077,8 +1077,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.haha.chuckles;
 				PRODUCT_NAME = chuckles;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "e656f048-ba08-4cb2-8250-69c2c692f988";
+				PROVISIONING_PROFILE_SPECIFIER = ChucklesDev;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1088,7 +1088,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Will Guan (5456EZJU8Z)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5456EZJU8Z;
 				INFOPLIST_FILE = chuckles/Info.plist;
@@ -1101,8 +1101,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.haha.chuckles;
 				PRODUCT_NAME = chuckles;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "dbec5fd4-9268-4540-b746-03e59c61160c";
+				PROVISIONING_PROFILE_SPECIFIER = ChucklesProd;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
