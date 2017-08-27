@@ -99,7 +99,7 @@ class Jokes extends Component {
         width: 160,
         borderRadius: 5,
         borderWidth: 1,
-        borderColor: '#1f3861',
+        borderColor: 'darkorange',
         opacity: 0.8
       },
       buttonWrapperJokeMama: {
@@ -110,7 +110,7 @@ class Jokes extends Component {
         width: 160,
         borderRadius: 5,
         borderWidth: 1,
-        borderColor: '#1f3861',
+        borderColor: 'darkorange',
         opacity: 0.8
       },
       JokeResultText: {
