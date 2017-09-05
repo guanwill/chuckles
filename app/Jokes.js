@@ -60,7 +60,23 @@ class Jokes extends Component {
     .done();
   }
 
-
+  getDadJokes() {
+    fetch("https://icanhazdadjoke.com/", {
+      method: "GET",
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then((response) => response.json())
+    .then((responseData) => {
+      console.log(responseData)
+      this.setState({
+        // joke: this.capitalizeFirstLetter(responseData.joke),
+        joke: responseData.joke,
+      })
+    })
+    .done();
+  }
 
   render() {
 
@@ -134,6 +150,7 @@ class Jokes extends Component {
             <Picker.Item label="Select Joke" value="select" />
             <Picker.Item label="Chuck Norris" value="chuck" />
             <Picker.Item label="Your Mama" value="mama" />
+            <Picker.Item label="Dad Jokes" value="dad" />
           </Picker>
         </View>
 
@@ -146,6 +163,11 @@ class Jokes extends Component {
             {this.state.type == "mama" &&
             <TouchableOpacity style={styles.buttonWrapperJokeMama} onPress={this.getMamaJokes.bind(this)}>
               <Text style={styles.buttonText}> MAMA ME-A </Text>
+            </TouchableOpacity>
+            }
+            {this.state.type == "dad" &&
+            <TouchableOpacity style={styles.buttonWrapperJokeMama} onPress={this.getDadJokes.bind(this)}>
+              <Text style={styles.buttonText}> DADA </Text>
             </TouchableOpacity>
             }
 
