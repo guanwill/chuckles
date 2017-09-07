@@ -71,7 +71,6 @@ class Jokes extends Component {
     .then((responseData) => {
       console.log(responseData)
       this.setState({
-        // joke: this.capitalizeFirstLetter(responseData.joke),
         joke: responseData.joke,
       })
     })
