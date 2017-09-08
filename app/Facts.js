@@ -63,7 +63,7 @@ class Facts extends Component {
         flex: 1,
         alignItems: 'center', //horizontal
         justifyContent: 'center', //vertical
-        backgroundColor: '#fff',
+        backgroundColor: 'purple',
       },
       buttonText: {
         fontSize: 18,
@@ -73,20 +73,19 @@ class Facts extends Component {
         fontWeight: "bold"
       },
       picker: {
-        backgroundColor: '#fff',
+        backgroundColor: 'rgba(175, 173, 255, 0.38)',
       },
       FactContainer: {
-        backgroundColor: '#fff',
+        backgroundColor: 'rgba(175, 173, 255, 0.38)',
         height: '200%',
         width: '100%',
-        alignItems: 'center'
+        alignItems: 'center',
       },
       FactResult: {
         padding: 40,
         paddingTop: 20,
       },
       buttonWrapperFactChuck: {
-        // backgroundColor:'#1f3861',
         backgroundColor: 'darkblue',
         padding: 2,
         marginBottom: 11,
@@ -100,7 +99,6 @@ class Facts extends Component {
         textAlign: 'justify',
         fontSize: 15,
         fontWeight: 'bold',
-        // color: '#ad4b40'
         color: 'grey'
       }
 
@@ -115,7 +113,7 @@ class Facts extends Component {
             selectedValue={this.state.type}
             onValueChange={(value) => this.setState({type: value})}>
             <Picker.Item label="Select Fact" value="select" />
-            <Picker.Item label="Facts about today" value="today" />
+            <Picker.Item label="Facts About Today" value="today" />
           </Picker>
         </View>
 

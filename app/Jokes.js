@@ -94,10 +94,10 @@ class Jokes extends Component {
         fontWeight: "bold"
       },
       picker: {
-        backgroundColor: '#fff',
+        backgroundColor: 'beige',
       },
       JokeContainer: {
-        backgroundColor: '#fff',
+        backgroundColor: 'beige',
         height: '200%',
         width: '100%',
         alignItems: 'center'
