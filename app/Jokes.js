@@ -33,6 +33,9 @@ class Jokes extends Component {
   }
 
   getChuckJokes() {
+    this.setState({
+      isLoaded: false,
+    })
     fetch("https://api.chucknorris.io/jokes/random", {
       method: "GET",
     })
@@ -41,12 +44,16 @@ class Jokes extends Component {
       console.log(responseData.value)
       this.setState({
         joke: this.capitalizeFirstLetter(responseData.value),
+        isLoaded: true,
       })
     })
     .done();
   }
 
   getMamaJokes() {
+    this.setState({
+      isLoaded: false,
+    })
     fetch("http://api.yomomma.info/", {
       method: "GET",
     })
@@ -55,12 +62,16 @@ class Jokes extends Component {
       console.log(responseData.joke)
       this.setState({
         joke: this.capitalizeFirstLetter(responseData.joke),
+        isLoaded: true,
       })
     })
     .done();
   }
 
   getDadJokes() {
+    this.setState({
+      isLoaded: false,
+    })
     fetch("https://icanhazdadjoke.com/", {
       method: "GET",
       headers: {
@@ -72,6 +83,7 @@ class Jokes extends Component {
       console.log(responseData)
       this.setState({
         joke: responseData.joke,
+        isLoaded: true
       })
     })
     .done();
@@ -154,25 +166,37 @@ class Jokes extends Component {
         </View>
 
         <View style={styles.JokeContainer}>
+
             {this.state.type == "chuck" &&
             <TouchableOpacity style={styles.buttonWrapperJokeChuck} onPress={this.getChuckJokes.bind(this)}>
               <Text style={styles.buttonText}> CHUCK ME </Text>
             </TouchableOpacity>
             }
+
+
             {this.state.type == "mama" &&
             <TouchableOpacity style={styles.buttonWrapperJokeMama} onPress={this.getMamaJokes.bind(this)}>
               <Text style={styles.buttonText}> MAMA ME-A </Text>
             </TouchableOpacity>
             }
+
+
             {this.state.type == "dad" &&
             <TouchableOpacity style={styles.buttonWrapperJokeMama} onPress={this.getDadJokes.bind(this)}>
               <Text style={styles.buttonText}> DADA </Text>
             </TouchableOpacity>
             }
 
-            <View style={styles.JokeResult}>
-              <Text style={styles.JokeResultText}>{this.state.joke} </Text>
-            </View>
+
+            {!this.state.isLoaded ?
+              <View style={styles.JokeResult}>
+                <Text style={styles.JokeResultText}>Loading ... </Text>
+              </View> :
+              <View style={styles.JokeResult}>
+                <Text style={styles.JokeResultText}>{this.state.joke} </Text>
+              </View>
+            }
+
         </View>
 
 

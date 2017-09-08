@@ -33,6 +33,9 @@ class Facts extends Component {
   }
 
   getTodaysFact() {
+    this.setState({
+      isLoaded: false
+    })
     var TodayDate = new Date();
     var month = TodayDate.getMonth() + 1
     var date =  TodayDate.getDate()
@@ -44,13 +47,9 @@ class Facts extends Component {
     })
     .then((response) => response.json())
     .then((responseData) => {
-      console.log(responseData)
-      // a = 'responseData'
-      // b = JSON.parse(a)
-      // console.log(b)
       this.setState({
-        // fact: this.capitalizeFirstLetter(responseData.value),
-        fact: responseData.text
+        fact: responseData.text,
+        isLoaded: true
       })
     })
     .done();
@@ -107,7 +106,7 @@ class Facts extends Component {
     return (
 
       <View>
-        <View  style={styles.Container}>
+        <View style={styles.Container}>
           <Picker
             style={styles.picker}
             selectedValue={this.state.type}
@@ -124,9 +123,15 @@ class Facts extends Component {
             </TouchableOpacity>
             }
 
-            <View style={styles.FactResult}>
-              <Text style={styles.FactResultText}>{this.state.fact} </Text>
-            </View>
+            {!this.state.isLoaded ?
+              <View style={styles.FactResult}>
+                <Text style={styles.FactResultText}>Loading ... </Text>
+              </View> :
+              <View style={styles.FactResult}>
+                <Text style={styles.FactResultText}>{this.state.fact} </Text>
+              </View>
+            }
+
         </View>
 
 
