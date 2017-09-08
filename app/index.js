@@ -8,6 +8,7 @@ import {
 import {Router, Scene, Actions} from 'react-native-router-flux';
 import Jokes from './Jokes';
 import Home from './Home';
+import Facts from './Facts';
 
 class App extends Component {
 
@@ -26,6 +27,11 @@ class App extends Component {
             component={Jokes}
             key='Jokes'
             title='Jokes'
+          />
+          <Scene
+            component={Facts}
+            key='Facts'
+            title='Facts'
           />
 
         </Scene>

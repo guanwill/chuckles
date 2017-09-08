@@ -18,6 +18,9 @@ class Home extends Component {
   goToJokes() {
     Actions.Jokes()
   }
+  goToFacts() {
+    Actions.Facts()
+  }
 
   render() {
     var styles = StyleSheet.create({
@@ -36,7 +39,8 @@ class Home extends Component {
         borderRadius: 10,
         borderWidth: 1,
         borderColor: 'darkorange',
-        opacity: 0.8
+        opacity: 0.8,
+        marginBottom: 20,
       },
       buttonText: {
         fontSize: 20,
@@ -52,6 +56,16 @@ class Home extends Component {
         backgroundColor: null,
         alignItems: 'center', //horizontal
         justifyContent: 'center', //vertical
+      },
+      factbuttonWrapper: {
+        backgroundColor:'blue',
+        padding: 10,
+        width: 160,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: 'blue',
+        opacity: 0.5,
+        marginBottom: 20,
       }
     });
 
@@ -60,6 +74,11 @@ class Home extends Component {
         <View >
             <TouchableOpacity style={styles.buttonWrapper} onPress={this.goToJokes.bind(this)}>
               <Text style={styles.buttonText}> JOKES </Text>
+            </TouchableOpacity>
+        </View>
+        <View >
+            <TouchableOpacity style={styles.factbuttonWrapper} onPress={this.goToFacts.bind(this)}>
+              <Text style={styles.buttonText}> FACTS </Text>
             </TouchableOpacity>
         </View>
       </Image>
