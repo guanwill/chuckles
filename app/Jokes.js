@@ -183,7 +183,7 @@ class Jokes extends Component {
 
             {this.state.type == "dad" &&
             <TouchableOpacity style={styles.buttonWrapperJokeMama} onPress={this.getDadJokes.bind(this)}>
-              <Text style={styles.buttonText}> DADA </Text>
+              <Text style={styles.buttonText}> DAD ME </Text>
             </TouchableOpacity>
             }
 
